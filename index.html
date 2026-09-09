@@ -8,19 +8,24 @@
 </head>
 <body>
 
+  <!-- メニューが開いた時に背景を暗くするオーバーレイ -->
+  <div class="menu-overlay" id="js-overlay"></div>
+
   <!-- ==========================================
        1. ヘッダーエリア
        ========================================== -->
   <header class="site-header">
     <div class="header-inner">
-      <!-- ⭐︎ここにイラレで作成したロゴ画像(SVG/PNG)を入れる⭐︎ -->
       <a href="#" class="header-logo">
         <img src="logo.svg" alt="TRAVID" class="logo-img">
         <span class="logo-text-dummy">TRAVID</span>
       </a>
 
-      <!-- ナビゲーションメニュー -->
+      <!-- スマホ用サイドナビゲーションメニュー -->
       <nav class="header-nav" id="js-nav">
+        <!-- ⭐︎サイドメニュー内部の「×」閉じるボタン⭐︎ -->
+        <button class="menu-close-btn" id="js-close-btn" aria-label="メニューを閉じる">✕</button>
+
         <ul class="nav-list">
           <li class="nav-item"><a href="#spot" class="nav-link">スポットから探す</a></li>
           <li class="nav-item"><a href="#area" class="nav-link">エリアから探す</a></li>
@@ -36,7 +41,7 @@
         <a href="#myplan" class="btn-gold">マイプラン</a>
       </div>
 
-      <!-- スマホ用ハンバーガーボタン -->
+      <!-- スマホ用ハンバーガーボタン（三本線） -->
       <button class="hamburger" id="js-hamburger" aria-label="メニューを開く">
         <span></span><span></span><span></span>
       </button>
@@ -48,14 +53,11 @@
          2. メインビジュアル (Hero Section)
          ========================================== -->
     <section class="hero">
-      <div class="hero-bg">
-        <!-- ⭐︎ここに印象的な風景写真などの背景画像を設定⭐︎ -->
-      </div>
+      <div class="hero-bg"></div>
       <div class="hero-content">
         <h1 class="hero-title">未知の魅力を、旅しよう。</h1>
         <p class="hero-subtitle">TRAVIDが提案する特別なローカル体験と巡る旅</p>
         
-        <!-- 簡易検索バー (コードで構築) -->
         <div class="search-bar">
           <input type="text" placeholder="キーワードや目的地を入力" class="search-input">
           <button type="button" class="btn-gold search-btn">検索</button>
@@ -75,7 +77,6 @@
         <div class="card-grid">
           <article class="card">
             <div class="card-img-wrap">
-              <!-- ⭐︎写真画像を入れる⭐︎ -->
               <div class="img-placeholder">絶景・自然</div>
             </div>
             <div class="card-body">
@@ -167,7 +168,6 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <div class="footer-brand">
-        <!-- ⭐︎ここにイラレで作ったロゴ画像を入れる⭐︎ -->
         <div class="footer-logo">TRAVID</div>
         <p class="footer-desc">新しい旅の発見と提案をお届けするメディアプラットフォーム</p>
       </div>
