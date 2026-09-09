@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TRAVID - あなただけの特別な旅を</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ==========================================
+       1. ヘッダーエリア
+       ========================================== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <!-- ⭐︎ここにイラレで作成したロゴ画像(SVG/PNG)を入れる⭐︎ -->
+      <a href="#" class="header-logo">
+        <img src="logo.svg" alt="TRAVID" class="logo-img">
+        <span class="logo-text-dummy">TRAVID</span>
+      </a>
+
+      <!-- ナビゲーションメニュー -->
+      <nav class="header-nav" id="js-nav">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="#spot" class="nav-link">スポットから探す</a></li>
+          <li class="nav-item"><a href="#area" class="nav-link">エリアから探す</a></li>
+          <li class="nav-item"><a href="#course" class="nav-link">モデルコース</a></li>
+        </ul>
+        <div class="mobile-cta-wrap">
+          <a href="#myplan" class="btn-gold">マイプラン</a>
+        </div>
+      </nav>
+
+      <!-- PC用右端ボタン -->
+      <div class="header-cta">
+        <a href="#myplan" class="btn-gold">マイプラン</a>
+      </div>
+
+      <!-- スマホ用ハンバーガーボタン -->
+      <button class="hamburger" id="js-hamburger" aria-label="メニューを開く">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==========================================
+         2. メインビジュアル (Hero Section)
+         ========================================== -->
+    <section class="hero">
+      <div class="hero-bg">
+        <!-- ⭐︎ここに印象的な風景写真などの背景画像を設定⭐︎ -->
+      </div>
+      <div class="hero-content">
+        <h1 class="hero-title">未知の魅力を、旅しよう。</h1>
+        <p class="hero-subtitle">TRAVIDが提案する特別なローカル体験と巡る旅</p>
+        
+        <!-- 簡易検索バー (コードで構築) -->
+        <div class="search-bar">
+          <input type="text" placeholder="キーワードや目的地を入力" class="search-input">
+          <button type="button" class="btn-gold search-btn">検索</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         3. スポットから探す
+         ========================================== -->
+    <section id="spot" class="section">
+      <div class="container">
+        <h2 class="section-title">
+          <span class="title-en">SPOT</span>
+          スポットから探す
+        </h2>
+        <div class="card-grid">
+          <article class="card">
+            <div class="card-img-wrap">
+              <!-- ⭐︎写真画像を入れる⭐︎ -->
+              <div class="img-placeholder">絶景・自然</div>
+            </div>
+            <div class="card-body">
+              <span class="card-tag">自然</span>
+              <h3 class="card-title">山頂から望む絶景雲海スポット</h3>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-img-wrap">
+              <div class="img-placeholder">歴史・文化</div>
+            </div>
+            <div class="card-body">
+              <span class="card-tag">歴史</span>
+              <h3 class="card-title">静寂に包まれた情緒ある隠れ寺院</h3>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-img-wrap">
+              <div class="img-placeholder">グルメ</div>
+            </div>
+            <div class="card-body">
+              <span class="card-tag">グルメ</span>
+              <h3 class="card-title">地元産の旬食材を味わう隠れ家カフェ</h3>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         4. エリアから探す
+         ========================================== -->
+    <section id="area" class="section section-dark">
+      <div class="container">
+        <h2 class="section-title title-light">
+          <span class="title-en">AREA</span>
+          エリアから探す
+        </h2>
+        <div class="area-grid">
+          <a href="#" class="area-item">北海道・東北</a>
+          <a href="#" class="area-item">関東</a>
+          <a href="#" class="area-item">中部・北陸</a>
+          <a href="#" class="area-item">関西</a>
+          <a href="#" class="area-item">中国・四国</a>
+          <a href="#" class="area-item">九州・沖縄</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         5. モデルコース
+         ========================================== -->
+    <section id="course" class="section">
+      <div class="container">
+        <h2 class="section-title">
+          <span class="title-en">MODEL COURSE</span>
+          モデルコース
+        </h2>
+        <div class="card-grid">
+          <article class="card course-card">
+            <div class="card-img-wrap">
+              <div class="img-placeholder">1泊2日プラン</div>
+            </div>
+            <div class="card-body">
+              <span class="course-badge">1泊2日</span>
+              <h3 class="card-title">歴史と美食を満喫する金沢・能登周遊旅</h3>
+            </div>
+          </article>
+
+          <article class="card course-card">
+            <div class="card-img-wrap">
+              <div class="img-placeholder">日帰りプラン</div>
+            </div>
+            <div class="card-body">
+              <span class="course-badge">日帰り</span>
+              <h3 class="card-title">自然に癒やされる奥多摩ドライブコース</h3>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================
+       6. フッター
+       ========================================== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <!-- ⭐︎ここにイラレで作ったロゴ画像を入れる⭐︎ -->
+        <div class="footer-logo">TRAVID</div>
+        <p class="footer-desc">新しい旅の発見と提案をお届けするメディアプラットフォーム</p>
+      </div>
+      <nav class="footer-nav">
+        <ul>
+          <li><a href="#spot">スポットから探す</a></li>
+          <li><a href="#area">エリアから探す</a></li>
+          <li><a href="#course">モデルコース</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; TRAVID All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
