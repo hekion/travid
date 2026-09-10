@@ -16,30 +16,52 @@
        ========================================== -->
   <header class="site-header">
     <div class="header-inner">
+      <!-- ど真ん中に配置するロゴ -->
       <a href="#" class="header-logo">
         <img src="logo.svg" alt="TRAVID" class="logo-img">
         <span class="logo-text-dummy">TRAVID</span>
       </a>
 
-      <!-- スマホ用サイドナビゲーションメニュー -->
+      <!-- ナビゲーションメニュー（PCではロゴの下、スマホではサイドスライド） -->
       <nav class="header-nav" id="js-nav">
-        <!-- ⭐︎サイドメニュー内部の「×」閉じるボタン⭐︎ -->
+        <!-- スマホ用サイドメニュー内部の「×」閉じるボタン -->
         <button class="menu-close-btn" id="js-close-btn" aria-label="メニューを閉じる">✕</button>
 
         <ul class="nav-list">
-          <li class="nav-item"><a href="#spot" class="nav-link">スポットから探す</a></li>
-          <li class="nav-item"><a href="#area" class="nav-link">エリアから探す</a></li>
-          <li class="nav-item"><a href="#course" class="nav-link">モデルコース</a></li>
+          <li class="nav-item">
+            <a href="#spot" class="nav-link">
+              <!-- アイコン：ピン/スポット -->
+              <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span>スポットから探す</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#area" class="nav-link">
+              <!-- アイコン：マップ/エリア -->
+              <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon>
+                <line x1="8" y1="2" x2="8" y2="18"></line>
+                <line x1="16" y1="6" x2="16" y2="22"></line>
+              </svg>
+              <span>エリアから探す</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#course" class="nav-link">
+              <!-- アイコン：ルート/モデルコース -->
+              <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="6" cy="19" r="3"></circle>
+                <circle cx="18" cy="5" r="3"></circle>
+                <path d="M12 19h4.5a3.5 3.5 0 0 0 0-7h-8a3.5 3.5 0 0 1 0-7H12"></path>
+              </svg>
+              <span>モデルコース</span>
+            </a>
+          </li>
         </ul>
-        <div class="mobile-cta-wrap">
-          <a href="#myplan" class="btn-gold">マイプラン</a>
-        </div>
       </nav>
-
-      <!-- PC用右端ボタン -->
-      <div class="header-cta">
-        <a href="#myplan" class="btn-gold">マイプラン</a>
-      </div>
 
       <!-- スマホ用ハンバーガーボタン（三本線） -->
       <button class="hamburger" id="js-hamburger" aria-label="メニューを開く">
@@ -57,11 +79,6 @@
       <div class="hero-content">
         <h1 class="hero-title">未知の魅力を、旅しよう。</h1>
         <p class="hero-subtitle">TRAVIDが提案する特別なローカル体験と巡る旅</p>
-        
-        <div class="search-bar">
-          <input type="text" placeholder="キーワードや目的地を入力" class="search-input">
-          <button type="button" class="btn-gold search-btn">検索</button>
-        </div>
       </div>
     </section>
 
