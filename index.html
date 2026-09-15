@@ -22,42 +22,84 @@
         <span class="logo-text-dummy">TRAVID</span>
       </a>
 
-      <!-- ナビゲーションメニュー（PCではロゴの下、スマホではサイドスライド） -->
+      <!-- メインナビゲーション -->
       <nav class="header-nav" id="js-nav">
         <!-- スマホ用サイドメニュー内部の「×」閉じるボタン -->
         <button class="menu-close-btn" id="js-close-btn" aria-label="メニューを閉じる">✕</button>
 
         <ul class="nav-list">
-          <li class="nav-item">
-            <a href="#spot" class="nav-link">
-              <!-- アイコン：ピン/スポット -->
-              <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                <circle cx="12" cy="10" r="3"></circle>
-              </svg>
-              <span>スポットから探す</span>
-            </a>
-          </li>
+          <!-- 1. エリア -->
           <li class="nav-item">
             <a href="#area" class="nav-link">
-              <!-- アイコン：マップ/エリア -->
               <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon>
                 <line x1="8" y1="2" x2="8" y2="18"></line>
                 <line x1="16" y1="6" x2="16" y2="22"></line>
               </svg>
-              <span>エリアから探す</span>
+              <span>エリア</span>
             </a>
           </li>
+
+          <!-- 2. 見る -->
           <li class="nav-item">
-            <a href="#course" class="nav-link">
-              <!-- アイコン：ルート/モデルコース -->
+            <a href="#see" class="nav-link">
               <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="6" cy="19" r="3"></circle>
-                <circle cx="18" cy="5" r="3"></circle>
-                <path d="M12 19h4.5a3.5 3.5 0 0 0 0-7h-8a3.5 3.5 0 0 1 0-7H12"></path>
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                <circle cx="12" cy="12" r="3"></circle>
               </svg>
-              <span>モデルコース</span>
+              <span>見る</span>
+            </a>
+          </li>
+
+          <!-- 3. 食べる -->
+          <li class="nav-item">
+            <a href="#eat" class="nav-link">
+              <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 8v13M14 8v13M14 8a4 4 0 0 1 8 0v0"></path>
+                <path d="M4 3v5a4 4 0 0 0 4 4h0a4 4 0 0 0 4-4V3M8 12v9"></path>
+              </svg>
+              <span>食べる</span>
+            </a>
+          </li>
+
+          <!-- 4. 買う -->
+          <li class="nav-item">
+            <a href="#shop" class="nav-link">
+              <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <path d="M16 10a4 4 0 0 1-8 0"></path>
+              </svg>
+              <span>買う</span>
+            </a>
+          </li>
+
+          <!-- 5. 休む -->
+          <li class="nav-item">
+            <a href="#rest" class="nav-link">
+              <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 8h1a4 4 0 1 1 0 8h-1"></path>
+                <path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V8z"></path>
+                <line x1="6" y1="2" x2="6" y2="4"></line>
+                <line x1="10" y1="2" x2="10" y2="4"></line>
+                <line x1="14" y1="2" x2="14" y2="4"></line>
+              </svg>
+              <span>休む</span>
+            </a>
+          </li>
+
+          <!-- 6. 巡る（靴底・足あとアイコン） -->
+          <li class="nav-item">
+            <a href="#tour" class="nav-link">
+              <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <!-- 右足（前足部とヒール） -->
+                <path d="M14 4c2.5 0 4 2 4 4.5 0 2.5-1.5 4-2.5 5.5s-1.5 2.5-1.5 4c0 1.5.8 2 1.5 2 1 0 2.5-1 2.5-2"></path>
+                <ellipse cx="14" cy="5" rx="2" ry="2.5"></ellipse>
+                <!-- 左足（前足部とヒール） -->
+                <path d="M7 10c2.5 0 4 2 4 4.5 0 2.5-1.5 4-2.5 5.5S7 22.5 7 24c0 1.5.8 2 1.5 2 1 0 2.5-1 2.5-2" transform="scale(0.85) translate(-1, -6)"></path>
+                <ellipse cx="6" cy="11" rx="1.8" ry="2.2"></ellipse>
+              </svg>
+              <span>巡る</span>
             </a>
           </li>
         </ul>
@@ -83,50 +125,7 @@
     </section>
 
     <!-- ==========================================
-         3. スポットから探す
-         ========================================== -->
-    <section id="spot" class="section">
-      <div class="container">
-        <h2 class="section-title">
-          <span class="title-en">SPOT</span>
-          スポットから探す
-        </h2>
-        <div class="card-grid">
-          <article class="card">
-            <div class="card-img-wrap">
-              <div class="img-placeholder">絶景・自然</div>
-            </div>
-            <div class="card-body">
-              <span class="card-tag">自然</span>
-              <h3 class="card-title">山頂から望む絶景雲海スポット</h3>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card-img-wrap">
-              <div class="img-placeholder">歴史・文化</div>
-            </div>
-            <div class="card-body">
-              <span class="card-tag">歴史</span>
-              <h3 class="card-title">静寂に包まれた情緒ある隠れ寺院</h3>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card-img-wrap">
-              <div class="img-placeholder">グルメ</div>
-            </div>
-            <div class="card-body">
-              <span class="card-tag">グルメ</span>
-              <h3 class="card-title">地元産の旬食材を味わう隠れ家カフェ</h3>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==========================================
-         4. エリアから探す
+         3. エリアから探す
          ========================================== -->
     <section id="area" class="section section-dark">
       <div class="container">
@@ -135,43 +134,88 @@
           エリアから探す
         </h2>
         <div class="area-grid">
-          <a href="#" class="area-item">北海道・東北</a>
+          <a href="#" class="area-item">北海道</a>
+          <a href="#" class="area-item">東北</a>
           <a href="#" class="area-item">関東</a>
-          <a href="#" class="area-item">中部・北陸</a>
-          <a href="#" class="area-item">関西</a>
-          <a href="#" class="area-item">中国・四国</a>
-          <a href="#" class="area-item">九州・沖縄</a>
+          <a href="#" class="area-item">中部</a>
+          <a href="#" class="area-item">近畿</a>
+          <a href="#" class="area-item">中国</a>
+          <a href="#" class="area-item">四国</a>
+          <a href="#" class="area-item">九州＆沖縄</a>
         </div>
       </div>
     </section>
 
     <!-- ==========================================
-         5. モデルコース
+         4. スポット検索 (見る / 食べる / 買う / 休む)
          ========================================== -->
-    <section id="course" class="section">
+    <section id="see" class="section">
       <div class="container">
         <h2 class="section-title">
-          <span class="title-en">MODEL COURSE</span>
-          モデルコース
+          <span class="title-en">SEE / EAT / SHOP / REST</span>
+          スポットを探す
+        </h2>
+        <div class="card-grid">
+          <article class="card">
+            <div class="card-img-wrap">
+              <div class="img-placeholder">見る：歴史・絶景</div>
+            </div>
+            <div class="card-body">
+              <span class="card-tag">🏯 城・歴史</span>
+              <h3 class="card-title">静寂に包まれた情緒ある隠れ名城</h3>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-img-wrap">
+              <div class="img-placeholder">食べる：グルメ</div>
+            </div>
+            <div class="card-body">
+              <span class="card-tag">🍽️ ご当地グルメ</span>
+              <h3 class="card-title">地元産の旬食材を味わう隠れ家食堂</h3>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-img-wrap">
+              <div class="img-placeholder">休む：道の駅・温泉</div>
+            </div>
+            <div class="card-body">
+              <span class="card-tag">🚗 道の駅</span>
+              <h3 class="card-title">地域特産品と温泉が楽しめる道の駅</h3>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         5. 巡る (テーマ別まとめ記事)
+         ========================================== -->
+    <section id="tour" class="section section-dark">
+      <div class="container">
+        <h2 class="section-title title-light">
+          <span class="title-en">FEATURE</span>
+          巡る（テーマ別特集）
         </h2>
         <div class="card-grid">
           <article class="card course-card">
             <div class="card-img-wrap">
-              <div class="img-placeholder">1泊2日プラン</div>
+              <div class="img-placeholder">100名城巡り</div>
             </div>
             <div class="card-body">
-              <span class="course-badge">1泊2日</span>
-              <h3 class="card-title">歴史と美食を満喫する金沢・能登周遊旅</h3>
+              <span class="course-badge">🏯 城を巡る</span>
+              <h3 class="card-title">現存天守12城を制覇する歴史探訪ロード</h3>
             </div>
           </article>
 
           <article class="card course-card">
             <div class="card-img-wrap">
-              <div class="img-placeholder">日帰りプラン</div>
+              <div class="img-placeholder">秘湯めぐり</div>
             </div>
             <div class="card-body">
-              <span class="course-badge">日帰り</span>
-              <h3 class="card-title">自然に癒やされる奥多摩ドライブコース</h3>
+              <span class="course-badge">♨️ 温泉を巡る</span>
+              <h3 class="card-title">大自然の絶景とともに楽しむ源泉掛け流し秘湯旅</h3>
             </div>
           </article>
         </div>
@@ -190,9 +234,12 @@
       </div>
       <nav class="footer-nav">
         <ul>
-          <li><a href="#spot">スポットから探す</a></li>
-          <li><a href="#area">エリアから探す</a></li>
-          <li><a href="#course">モデルコース</a></li>
+          <li><a href="#area">エリア</a></li>
+          <li><a href="#see">見る</a></li>
+          <li><a href="#eat">食べる</a></li>
+          <li><a href="#shop">買う</a></li>
+          <li><a href="#rest">休む</a></li>
+          <li><a href="#tour">巡る</a></li>
         </ul>
       </nav>
     </div>
