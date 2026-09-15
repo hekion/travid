@@ -121,7 +121,7 @@ body {
   margin: 0 auto;
   padding: 0 24px;
   display: flex;
-  flex-direction: column; /* PCでは縦並び（ロゴ上、メニュー下） */
+  flex-direction: column;
   align-items: center;
   gap: 16px;
 }
@@ -147,7 +147,7 @@ body {
 .nav-list {
   display: flex;
   list-style: none;
-  gap: 40px;
+  gap: 32px;
   align-items: center;
   justify-content: center;
 }
@@ -164,10 +164,15 @@ body {
   transition: color 0.3s ease;
 }
 
+/* アイコン装飾統一設定 */
 .nav-icon {
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
   stroke: var(--gold-rich);
+  fill: none; /* 塗り透明 */
+  stroke-width: 2; /* 線の太さ統一 */
+  stroke-linecap: round; /* 先端の丸み */
+  stroke-linejoin: round; /* 結合の丸み */
   transition: transform 0.3s ease;
 }
 
@@ -359,7 +364,7 @@ body {
   }
 
   .header-inner {
-    flex-direction: row; /* スマホでは横並び（ロゴ左、ハンバーガー右） */
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     gap: 0;
@@ -433,7 +438,7 @@ body {
   .nav-list {
     flex-direction: column;
     align-items: flex-start;
-    gap: 28px;
+    gap: 24px;
   }
 
   .hero-title {
@@ -451,6 +456,7 @@ body {
 
   .footer-nav ul {
     flex-direction: column;
+    flex-wrap: wrap;
     gap: 12px;
   }
 }
