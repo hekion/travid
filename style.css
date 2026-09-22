@@ -1,16 +1,18 @@
 @charset "UTF-8";
 
 /* ==========================================
-   共通変数 & ベース設定
+   共通変数 & ベース設定（60:30:10カラー法則）
    ========================================== */
 :root {
-  --navy-deep: #0D1B2A;  /* メイン紺色 */
-  --navy-light: #1B2A4A; /* サブ紺色 */
-  --gold-rich: #D4AF37;  /* アクセントゴールド */
-  --gold-light: #F3E5AB; /* ホバー用ゴールド */
-  --white: #FFFFFF;
-  --bg-offwhite: #F8F9FA;
-  --text-dark: #2B2B2B;
+  --navy-deep: #0D1B2A;   /* メイン色（ヘッダー・テキスト・アクセント） */
+  --navy-light: #1B2A4A;  /* カード枠線・サブコンポーネント */
+  --gold-accent: #D4AF37; /* アクセント色（バッジ・限定アイコン） */
+  --gold-hover: #B89528;  /* ホバー時ゴールド */
+  --white: #FFFFFF;       /* ベース背景1 */
+  --bg-offwhite: #F8F9FA; /* ベース背景2 */
+  --text-dark: #0D1B2A;   /* 本文高コントラスト紺色 */
+  --text-muted: #555555;  /* 補足テキスト */
+  --border-light: #E2E8F0;
 }
 
 * {
@@ -33,55 +35,38 @@ body {
 }
 
 /* ==========================================
-   共通コンポーネント
+   共通コンポーネント（ライト基調）
    ========================================== */
-.btn-gold {
-  display: inline-block;
-  padding: 12px 28px;
-  background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold-rich) 100%);
-  color: var(--navy-deep);
-  font-weight: bold;
-  font-size: 14px;
-  text-decoration: none;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
-  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.25);
-  transition: all 0.3s ease;
-}
-
-.btn-gold:hover {
-  opacity: 0.9;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(212, 175, 55, 0.4);
-}
-
 .section {
   padding: 80px 0;
+  background-color: var(--bg-offwhite);
 }
 
-.section-dark {
-  background-color: var(--navy-deep);
-  color: var(--white);
+.section-alt {
+  background-color: var(--white);
 }
 
 .section-title {
   text-align: center;
   font-size: 28px;
+  font-weight: bold;
+  color: var(--navy-deep);
+  margin-bottom: 8px;
+}
+
+.section-lead {
+  text-align: center;
+  font-size: 14px;
+  color: var(--text-muted);
   margin-bottom: 48px;
-  position: relative;
 }
 
 .title-en {
   display: block;
   font-size: 14px;
-  color: var(--gold-rich);
+  color: var(--gold-accent);
   letter-spacing: 2px;
   font-weight: bold;
-}
-
-.title-light {
-  color: var(--white);
 }
 
 /* 背景オーバーレイ */
@@ -104,84 +89,108 @@ body {
 }
 
 /* ==========================================
-   1. ヘッダー（PC用中央配置構造）
+   1. ヘッダー（ロゴ白背景 + ネイビーメニュー）
    ========================================== */
 .site-header {
   width: 100%;
-  background-color: var(--navy-deep);
   position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-  padding: 16px 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
 }
 
-.header-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
+/* 上部：白背景のロゴエリア */
+.header-logo-banner {
+  background-color: var(--white);
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.logo-banner-inner {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 16px;
+  justify-content: center;
+  position: relative;
 }
 
 .header-logo {
   text-decoration: none;
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 8px;
 }
 
 .logo-img {
-  height: 48px;
+  height: 40px;
   display: block;
 }
 
 .logo-text-dummy {
-  color: var(--white);
+  color: var(--navy-deep);
   font-size: 28px;
   font-weight: bold;
+  letter-spacing: 2px;
+}
+
+/* 下部：ネイビー背景のナビゲーションバー */
+.header-nav-bar {
+  background-color: var(--navy-deep);
+  padding: 10px 0;
+}
+
+.nav-bar-inner {
+  display: flex;
+  justify-content: center;
 }
 
 .nav-list {
   display: flex;
   list-style: none;
-  gap: 32px;
+  gap: 36px;
   align-items: center;
   justify-content: center;
 }
 
 .nav-link {
-  color: var(--white);
   text-decoration: none;
-  font-size: 15px;
-  font-weight: 500;
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 6px 0;
-  transition: color 0.3s ease;
-}
-
-/* アイコン装飾統一設定 */
-.nav-icon {
-  width: 20px;
-  height: 20px;
-  stroke: var(--gold-rich);
-  fill: none; /* 塗り透明 */
-  stroke-width: 2; /* 線の太さ統一 */
-  stroke-linecap: round; /* 先端の丸み */
-  stroke-linejoin: round; /* 結合の丸み */
-  transition: transform 0.3s ease;
+  gap: 10px;
+  transition: opacity 0.3s ease;
 }
 
 .nav-link:hover {
-  color: var(--gold-rich);
+  opacity: 0.85;
 }
 
-.nav-link:hover .nav-icon {
-  transform: translateY(-2px);
+/* ゴールド円形ベタ塗りバッジ */
+.icon-badge {
+  width: 32px;
+  height: 32px;
+  background-color: var(--gold-accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.nav-icon {
+  width: 18px;
+  height: 18px;
+  stroke: var(--navy-deep);
+  fill: none;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.nav-label {
+  color: var(--white);
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: 1px;
 }
 
 .hamburger, .menu-close-btn {
@@ -189,56 +198,123 @@ body {
 }
 
 /* ==========================================
-   2. メインビジュアル (Hero)
+   2. メインビジュアル (Hero - 検索窓なし)
    ========================================== */
 .hero {
   position: relative;
-  height: 440px;
-  background-color: var(--navy-light);
+  width: 100%;
+  height: 480px;
+  background-color: var(--navy-deep);
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.hero-picture, .hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(13, 27, 42, 0.3) 0%, rgba(13, 27, 42, 0.65) 100%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
   text-align: center;
   color: var(--white);
   padding: 0 24px;
 }
 
 .hero-title {
-  font-size: 40px;
+  font-size: 42px;
   font-weight: bold;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
   letter-spacing: 2px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
 }
 
 .hero-subtitle {
   font-size: 18px;
-  opacity: 0.9;
+  opacity: 0.95;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 /* ==========================================
-   3 & 5. カードグリッド
+   3. エリアから探す (日本地図 8区分 - ライト基調)
+   ========================================== */
+.japan-map-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.japan-map-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.map-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 22px 16px;
+  background-color: var(--white);
+  color: var(--navy-deep);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 10px;
+  border: 2px solid var(--navy-deep);
+  box-shadow: 0 4px 10px rgba(13, 27, 42, 0.08);
+  transition: all 0.3s ease;
+}
+
+.map-btn:hover {
+  background-color: var(--navy-deep);
+  color: var(--white);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(13, 27, 42, 0.2);
+}
+
+/* ==========================================
+   4. おすすめスポット
    ========================================== */
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 32px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 28px;
 }
 
 .card {
   background-color: var(--white);
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-  transition: transform 0.3s ease;
+  border: 1px solid var(--border-light);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
   transform: translateY(-6px);
+  box-shadow: 0 8px 24px rgba(13, 27, 42, 0.12);
 }
 
 .card-img-wrap {
-  height: 200px;
-  background-color: #e0e0e0;
+  height: 180px;
+  background-color: #E9ECEF;
 }
 
 .img-placeholder {
@@ -246,7 +322,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #777;
+  color: #777777;
   font-weight: bold;
 }
 
@@ -254,54 +330,88 @@ body {
   padding: 20px;
 }
 
-.card-tag, .course-badge {
+.card-tag {
   display: inline-block;
-  padding: 4px 12px;
-  background-color: #f0f0f0;
-  color: var(--navy-deep);
+  padding: 4px 10px;
   font-size: 12px;
   font-weight: bold;
   border-radius: 4px;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
-.course-badge {
-  background-color: var(--gold-rich);
+.tag-gold {
+  background-color: var(--gold-accent);
   color: var(--navy-deep);
 }
 
 .card-title {
   font-size: 16px;
   font-weight: bold;
+  color: var(--navy-deep);
   line-height: 1.4;
+  margin-bottom: 8px;
+}
+
+.card-loc {
+  font-size: 13px;
+  color: var(--text-muted);
 }
 
 /* ==========================================
-   4. エリアグリッド
+   5. テーマで「巡る」（おすすめ特集）
    ========================================== */
-.area-grid {
+.feature-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
 }
 
-.area-item {
-  display: block;
+.feature-card {
+  background-color: var(--white);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border-light);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 24px rgba(13, 27, 42, 0.12);
+}
+
+.feature-img-wrap {
+  height: 200px;
+  background-color: #E9ECEF;
+}
+
+.feature-body {
   padding: 24px;
-  background-color: var(--navy-light);
-  color: var(--white);
-  text-align: center;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 8px;
-  border: 1px solid rgba(212, 175, 55, 0.3);
-  transition: all 0.3s ease;
 }
 
-.area-item:hover {
-  background-color: var(--gold-rich);
+.course-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  background-color: var(--navy-deep);
+  color: var(--white);
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 4px;
+  margin-bottom: 12px;
+}
+
+.feature-title {
+  font-size: 18px;
+  font-weight: bold;
   color: var(--navy-deep);
-  border-color: var(--gold-rich);
+  line-height: 1.4;
+  margin-bottom: 10px;
+}
+
+.feature-desc {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.5;
 }
 
 /* ==========================================
@@ -318,67 +428,88 @@ body {
   justify-content: space-between;
   padding-bottom: 40px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  gap: 40px;
 }
 
 .footer-logo {
-  font-size: 24px;
+  font-size: 26px;
   font-weight: bold;
-  color: var(--gold-rich);
+  color: var(--gold-accent);
   margin-bottom: 12px;
 }
 
 .footer-desc {
-  font-size: 14px;
-  opacity: 0.7;
+  font-size: 13px;
+  opacity: 0.8;
+  max-width: 320px;
+  margin-bottom: 20px;
 }
 
-.footer-nav ul {
+.footer-sns {
+  display: flex;
+  gap: 16px;
+}
+
+.sns-icon {
+  width: 22px;
+  height: 22px;
+  color: var(--white);
+  transition: color 0.3s ease;
+}
+
+.sns-icon:hover {
+  color: var(--gold-accent);
+}
+
+.footer-nav {
+  display: flex;
+  gap: 48px;
+}
+
+.footer-menu, .footer-sub-menu {
   list-style: none;
   display: flex;
-  gap: 24px;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .footer-nav a {
   color: var(--white);
   text-decoration: none;
   font-size: 14px;
+  opacity: 0.85;
+  transition: opacity 0.3s ease, color 0.3s ease;
 }
 
 .footer-nav a:hover {
-  color: var(--gold-rich);
+  opacity: 1;
+  color: var(--gold-accent);
 }
 
 .footer-bottom {
   text-align: center;
   padding: 24px 0;
   font-size: 12px;
-  opacity: 0.5;
+  opacity: 0.6;
 }
 
 /* ==========================================
    レスポンシブ設定（スマホ表示）
    ========================================== */
 @media screen and (max-width: 768px) {
-  .site-header {
-    padding: 12px 0;
-  }
-
-  .header-inner {
-    flex-direction: row;
+  .logo-banner-inner {
     justify-content: space-between;
-    align-items: center;
-    gap: 0;
   }
 
   .logo-img {
-    height: 36px;
+    height: 32px;
   }
 
   .logo-text-dummy {
     font-size: 22px;
   }
 
-  /* ハンバーガーボタン（三本線） */
+  /* スマホ用ハンバーガーボタン */
   .hamburger {
     display: flex;
     flex-direction: column;
@@ -393,10 +524,15 @@ body {
   .hamburger span {
     width: 100%;
     height: 2px;
-    background-color: var(--white);
+    background-color: var(--navy-deep);
   }
 
-  /* スマホ用サイドスライドメニュー */
+  /* スマホ用ナビバー非表示設定 */
+  .header-nav-bar {
+    padding: 0;
+  }
+
+  /* スマホ用スライドメニュー */
   .header-nav {
     display: block;
     position: fixed;
@@ -405,10 +541,10 @@ body {
     width: 80%;
     max-width: 300px;
     height: 100vh;
-    background-color: var(--navy-light);
+    background-color: var(--navy-deep);
     padding: 80px 32px 40px;
     transition: right 0.4s ease;
-    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.4);
     z-index: 1000;
   }
 
@@ -416,7 +552,6 @@ body {
     right: 0;
   }
 
-  /* サイドメニュー内部のバツボタン */
   .menu-close-btn {
     display: flex;
     align-items: center;
@@ -427,26 +562,41 @@ body {
     width: 36px;
     height: 36px;
     background: transparent;
-    border: 1px solid var(--gold-rich);
+    border: 1px solid var(--gold-accent);
     border-radius: 50%;
-    color: var(--gold-rich);
+    color: var(--gold-accent);
     font-size: 20px;
     cursor: pointer;
-    line-height: 1;
   }
 
   .nav-list {
     flex-direction: column;
     align-items: flex-start;
-    gap: 24px;
+    gap: 20px;
+  }
+
+  /* メインビジュアル（スマホ高さ調整） */
+  .hero {
+    height: 360px;
   }
 
   .hero-title {
     font-size: 28px;
   }
-  
+
   .hero-subtitle {
     font-size: 14px;
+  }
+
+  /* 日本地図グリッド（スマホは2列） */
+  .japan-map-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .map-btn {
+    padding: 16px 12px;
+    font-size: 15px;
   }
 
   .footer-inner {
@@ -454,9 +604,8 @@ body {
     gap: 32px;
   }
 
-  .footer-nav ul {
+  .footer-nav {
     flex-direction: column;
-    flex-wrap: wrap;
-    gap: 12px;
+    gap: 24px;
   }
 }
