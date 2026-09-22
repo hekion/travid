@@ -17,16 +17,10 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   if (hamburger && nav && closeBtn && overlay) {
-    // 三本線タップで開く
     hamburger.addEventListener('click', openMenu);
-
-    // メニュー内の「✕」タップで閉じる
     closeBtn.addEventListener('click', closeMenu);
-
-    // 暗い背景（オーバーレイ）タップで閉じる
     overlay.addEventListener('click', closeMenu);
 
-    // メニュー内のリンクタップで閉じる
     const navLinks = nav.querySelectorAll('.nav-link');
     navLinks.forEach(link => {
       link.addEventListener('click', closeMenu);
