@@ -8,107 +8,121 @@
 </head>
 <body>
 
-  <!-- メニューが開いた時に背景を暗くするオーバーレイ -->
+  <!-- スマホメニュー用オーバーレイ -->
   <div class="menu-overlay" id="js-overlay"></div>
 
   <!-- ==========================================
        1. ヘッダーエリア
        ========================================== -->
   <header class="site-header">
-    <div class="header-inner">
-      <!-- ど真ん中に配置するロゴ -->
-      <a href="#" class="header-logo">
-        <img src="logo.svg" alt="TRAVID" class="logo-img">
-        <span class="logo-text-dummy">TRAVID</span>
-      </a>
+    <!-- 上部：白背景のロゴバー -->
+    <div class="header-logo-banner">
+      <div class="container logo-banner-inner">
+        <a href="#" class="header-logo">
+          <img src="logo.svg" alt="TRAVID" class="logo-img">
+          <span class="logo-text-dummy">TRAVID</span>
+        </a>
+        <!-- スマホ用ハンバーガーボタン -->
+        <button class="hamburger" id="js-hamburger" aria-label="メニューを開く">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
 
-      <!-- メインナビゲーション -->
-      <nav class="header-nav" id="js-nav">
-        <!-- スマホ用サイドメニュー内部の「×」閉じるボタン -->
-        <button class="menu-close-btn" id="js-close-btn" aria-label="メニューを閉じる">✕</button>
+    <!-- 下部：ネイビー背景のナビゲーションバー -->
+    <div class="header-nav-bar">
+      <div class="container nav-bar-inner">
+        <nav class="header-nav" id="js-nav">
+          <button class="menu-close-btn" id="js-close-btn" aria-label="メニューを閉じる">✕</button>
 
-        <ul class="nav-list">
-          <!-- 1. エリア -->
-          <li class="nav-item">
-            <a href="#area" class="nav-link">
-              <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon>
-                <line x1="8" y1="2" x2="8" y2="18"></line>
-                <line x1="16" y1="6" x2="16" y2="22"></line>
-              </svg>
-              <span>エリア</span>
-            </a>
-          </li>
+          <ul class="nav-list">
+            <!-- 1. エリア -->
+            <li class="nav-item">
+              <a href="#area" class="nav-link">
+                <span class="icon-badge">
+                  <svg class="nav-icon" viewBox="0 0 24 24">
+                    <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon>
+                    <line x1="8" y1="2" x2="8" y2="18"></line>
+                    <line x1="16" y1="6" x2="16" y2="22"></line>
+                  </svg>
+                </span>
+                <span class="nav-label">エリア</span>
+              </a>
+            </li>
 
-          <!-- 2. 見る -->
-          <li class="nav-item">
-            <a href="#see" class="nav-link">
-              <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                <circle cx="12" cy="12" r="3"></circle>
-              </svg>
-              <span>見る</span>
-            </a>
-          </li>
+            <!-- 2. 見る -->
+            <li class="nav-item">
+              <a href="#see" class="nav-link">
+                <span class="icon-badge">
+                  <svg class="nav-icon" viewBox="0 0 24 24">
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                    <circle cx="12" cy="12" r="3"></circle>
+                  </svg>
+                </span>
+                <span class="nav-label">見る</span>
+              </a>
+            </li>
 
-          <!-- 3. 食べる -->
-          <li class="nav-item">
-            <a href="#eat" class="nav-link">
-              <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M18 8v13M14 8v13M14 8a4 4 0 0 1 8 0v0"></path>
-                <path d="M4 3v5a4 4 0 0 0 4 4h0a4 4 0 0 0 4-4V3M8 12v9"></path>
-              </svg>
-              <span>食べる</span>
-            </a>
-          </li>
+            <!-- 3. 食べる -->
+            <li class="nav-item">
+              <a href="#eat" class="nav-link">
+                <span class="icon-badge">
+                  <svg class="nav-icon" viewBox="0 0 24 24">
+                    <path d="M18 8v13M14 8v13M14 8a4 4 0 0 1 8 0v0"></path>
+                    <path d="M4 3v5a4 4 0 0 0 4 4h0a4 4 0 0 0 4-4V3M8 12v9"></path>
+                  </svg>
+                </span>
+                <span class="nav-label">食べる</span>
+              </a>
+            </li>
 
-          <!-- 4. 買う -->
-          <li class="nav-item">
-            <a href="#shop" class="nav-link">
-              <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
-                <line x1="3" y1="6" x2="21" y2="6"></line>
-                <path d="M16 10a4 4 0 0 1-8 0"></path>
-              </svg>
-              <span>買う</span>
-            </a>
-          </li>
+            <!-- 4. 買う -->
+            <li class="nav-item">
+              <a href="#shop" class="nav-link">
+                <span class="icon-badge">
+                  <svg class="nav-icon" viewBox="0 0 24 24">
+                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <path d="M16 10a4 4 0 0 1-8 0"></path>
+                  </svg>
+                </span>
+                <span class="nav-label">買う</span>
+              </a>
+            </li>
 
-          <!-- 5. 休む -->
-          <li class="nav-item">
-            <a href="#rest" class="nav-link">
-              <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M17 8h1a4 4 0 1 1 0 8h-1"></path>
-                <path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V8z"></path>
-                <line x1="6" y1="2" x2="6" y2="4"></line>
-                <line x1="10" y1="2" x2="10" y2="4"></line>
-                <line x1="14" y1="2" x2="14" y2="4"></line>
-              </svg>
-              <span>休む</span>
-            </a>
-          </li>
+            <!-- 5. 休む -->
+            <li class="nav-item">
+              <a href="#rest" class="nav-link">
+                <span class="icon-badge">
+                  <svg class="nav-icon" viewBox="0 0 24 24">
+                    <path d="M17 8h1a4 4 0 1 1 0 8h-1"></path>
+                    <path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V8z"></path>
+                    <line x1="6" y1="2" x2="6" y2="4"></line>
+                    <line x1="10" y1="2" x2="10" y2="4"></line>
+                    <line x1="14" y1="2" x2="14" y2="4"></line>
+                  </svg>
+                </span>
+                <span class="nav-label">休む</span>
+              </a>
+            </li>
 
-          <!-- 6. 巡る（靴底・足あとアイコン） -->
-          <li class="nav-item">
-            <a href="#tour" class="nav-link">
-              <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <!-- 右足（前足部とヒール） -->
-                <path d="M14 4c2.5 0 4 2 4 4.5 0 2.5-1.5 4-2.5 5.5s-1.5 2.5-1.5 4c0 1.5.8 2 1.5 2 1 0 2.5-1 2.5-2"></path>
-                <ellipse cx="14" cy="5" rx="2" ry="2.5"></ellipse>
-                <!-- 左足（前足部とヒール） -->
-                <path d="M7 10c2.5 0 4 2 4 4.5 0 2.5-1.5 4-2.5 5.5S7 22.5 7 24c0 1.5.8 2 1.5 2 1 0 2.5-1 2.5-2" transform="scale(0.85) translate(-1, -6)"></path>
-                <ellipse cx="6" cy="11" rx="1.8" ry="2.2"></ellipse>
-              </svg>
-              <span>巡る</span>
-            </a>
-          </li>
-        </ul>
-      </nav>
-
-      <!-- スマホ用ハンバーガーボタン（三本線） -->
-      <button class="hamburger" id="js-hamburger" aria-label="メニューを開く">
-        <span></span><span></span><span></span>
-      </button>
+            <!-- 6. 巡る -->
+            <li class="nav-item">
+              <a href="#tour" class="nav-link">
+                <span class="icon-badge">
+                  <svg class="nav-icon" viewBox="0 0 24 24">
+                    <path d="M14 4c2.5 0 4 2 4 4.5 0 2.5-1.5 4-2.5 5.5s-1.5 2.5-1.5 4c0 1.5.8 2 1.5 2 1 0 2.5-1 2.5-2"></path>
+                    <ellipse cx="14" cy="5" rx="2" ry="2.5"></ellipse>
+                    <path d="M7 10c2.5 0 4 2 4 4.5 0 2.5-1.5 4-2.5 5.5S7 22.5 7 24c0 1.5.8 2 1.5 2 1 0 2.5-1 2.5-2" transform="scale(0.85) translate(-1, -6)"></path>
+                    <ellipse cx="6" cy="11" rx="1.8" ry="2.2"></ellipse>
+                  </svg>
+                </span>
+                <span class="nav-label">巡る</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </div>
   </header>
 
@@ -117,7 +131,11 @@
          2. メインビジュアル (Hero Section)
          ========================================== -->
     <section class="hero">
-      <div class="hero-bg"></div>
+      <picture class="hero-picture">
+        <source media="(max-width: 768px)" srcset="hero-sp.jpg">
+        <img src="hero-pc.jpg" alt="ダイナミックなドライブ風景" class="hero-img">
+      </picture>
+      <div class="hero-overlay"></div>
       <div class="hero-content">
         <h1 class="hero-title">未知の魅力を、旅しよう。</h1>
         <p class="hero-subtitle">TRAVIDが提案する特別なローカル体験と巡る旅</p>
@@ -125,64 +143,104 @@
     </section>
 
     <!-- ==========================================
-         3. エリアから探す
+         3. エリアから探す (日本地図 8区分)
          ========================================== -->
-    <section id="area" class="section section-dark">
+    <section id="area" class="section">
       <div class="container">
-        <h2 class="section-title title-light">
+        <h2 class="section-title">
           <span class="title-en">AREA</span>
           エリアから探す
         </h2>
-        <div class="area-grid">
-          <a href="#" class="area-item">北海道</a>
-          <a href="#" class="area-item">東北</a>
-          <a href="#" class="area-item">関東</a>
-          <a href="#" class="area-item">中部</a>
-          <a href="#" class="area-item">近畿</a>
-          <a href="#" class="area-item">中国</a>
-          <a href="#" class="area-item">四国</a>
-          <a href="#" class="area-item">九州＆沖縄</a>
+        <p class="section-lead">行きたい地域を選択して、スポットや特集を絞り込めます。</p>
+
+        <div class="japan-map-wrapper">
+          <div class="japan-map-grid">
+            <a href="#area-hokkaido" class="map-btn hokkaido">
+              <span class="area-name">北海道</span>
+            </a>
+            <a href="#area-tohoku" class="map-btn tohoku">
+              <span class="area-name">東北</span>
+            </a>
+            <a href="#area-kanto" class="map-btn kanto">
+              <span class="area-name">関東</span>
+            </a>
+            <a href="#area-chubu" class="map-btn chubu">
+              <span class="area-name">中部</span>
+            </a>
+            <a href="#area-kinki" class="map-btn kinki">
+              <span class="area-name">近畿</span>
+            </a>
+            <a href="#area-chugoku" class="map-btn chugoku">
+              <span class="area-name">中国</span>
+            </a>
+            <a href="#area-shikoku" class="map-btn shikoku">
+              <span class="area-name">四国</span>
+            </a>
+            <a href="#area-kyushu" class="map-btn kyushu">
+              <span class="area-name">九州・沖縄</span>
+            </a>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- ==========================================
-         4. スポット検索 (見る / 食べる / 買う / 休む)
+         4. おすすめスポット
          ========================================== -->
-    <section id="see" class="section">
+    <section id="see" class="section section-alt">
       <div class="container">
         <h2 class="section-title">
-          <span class="title-en">SEE / EAT / SHOP / REST</span>
-          スポットを探す
+          <span class="title-en">RECOMMEND SPOTS</span>
+          おすすめスポット
         </h2>
+        <p class="section-lead">「見る」「食べる」「買う」「休む」の注目のスポット</p>
+
         <div class="card-grid">
+          <!-- 見る -->
           <article class="card">
             <div class="card-img-wrap">
-              <div class="img-placeholder">見る：歴史・絶景</div>
+              <div class="img-placeholder">見る / 城・歴史</div>
             </div>
             <div class="card-body">
-              <span class="card-tag">🏯 城・歴史</span>
-              <h3 class="card-title">静寂に包まれた情緒ある隠れ名城</h3>
+              <span class="card-tag tag-gold">👀 見る</span>
+              <h3 class="card-title">静寂に包まれた山上の天空城跡</h3>
+              <p class="card-loc">📍 長野県・信州エリア</p>
             </div>
           </article>
 
+          <!-- 食べる -->
           <article class="card">
             <div class="card-img-wrap">
-              <div class="img-placeholder">食べる：グルメ</div>
+              <div class="img-placeholder">食べる / グルメ</div>
             </div>
             <div class="card-body">
-              <span class="card-tag">🍽️ ご当地グルメ</span>
-              <h3 class="card-title">地元産の旬食材を味わう隠れ家食堂</h3>
+              <span class="card-tag tag-gold">🍽️ 食べる</span>
+              <h3 class="card-title">地元産の採れたて旬野菜を味わう農家レストラン</h3>
+              <p class="card-loc">📍 群馬県・草津・吾妻エリア</p>
             </div>
           </article>
 
+          <!-- 買う -->
           <article class="card">
             <div class="card-img-wrap">
-              <div class="img-placeholder">休む：道の駅・温泉</div>
+              <div class="img-placeholder">買う / 特産品</div>
             </div>
             <div class="card-body">
-              <span class="card-tag">🚗 道の駅</span>
-              <h3 class="card-title">地域特産品と温泉が楽しめる道の駅</h3>
+              <span class="card-tag tag-gold">🛍️ 買う</span>
+              <h3 class="card-title">伝統工芸品とローカルなお土産が揃うセレクトショップ</h3>
+              <p class="card-loc">📍 石川県・金沢エリア</p>
+            </div>
+          </article>
+
+          <!-- 休む -->
+          <article class="card">
+            <div class="card-img-wrap">
+              <div class="img-placeholder">休む / 道の駅</div>
+            </div>
+            <div class="card-body">
+              <span class="card-tag tag-gold">☕ 休む</span>
+              <h3 class="card-title">源泉掛け流し足湯を併設した絶景道の駅</h3>
+              <p class="card-loc">📍 静岡県・伊豆エリア</p>
             </div>
           </article>
         </div>
@@ -190,32 +248,50 @@
     </section>
 
     <!-- ==========================================
-         5. 巡る (テーマ別まとめ記事)
+         5. テーマで「巡る」（おすすめ特集）
          ========================================== -->
-    <section id="tour" class="section section-dark">
+    <section id="tour" class="section">
       <div class="container">
-        <h2 class="section-title title-light">
-          <span class="title-en">FEATURE</span>
-          巡る（テーマ別特集）
+        <h2 class="section-title">
+          <span class="title-en">FEATURE COURSES</span>
+          テーマで「巡る」
         </h2>
-        <div class="card-grid">
-          <article class="card course-card">
-            <div class="card-img-wrap">
-              <div class="img-placeholder">100名城巡り</div>
+        <p class="section-lead">テーマ別・目的地を縦断する旅のまとめ・特集記事</p>
+
+        <div class="feature-grid">
+          <!-- 特集 1 -->
+          <article class="feature-card">
+            <div class="feature-img-wrap">
+              <div class="img-placeholder">日本100名城</div>
             </div>
-            <div class="card-body">
+            <div class="feature-body">
               <span class="course-badge">🏯 城を巡る</span>
-              <h3 class="card-title">現存天守12城を制覇する歴史探訪ロード</h3>
+              <h3 class="feature-title">現存天守12城を制覇する！歴史探訪と城下町ドライブ</h3>
+              <p class="feature-desc">歴史の面影を残す国宝・重要文化財の天守を効率よく巡るおすすめルート。</p>
             </div>
           </article>
 
-          <article class="card course-card">
-            <div class="card-img-wrap">
-              <div class="img-placeholder">秘湯めぐり</div>
+          <!-- 特集 2 -->
+          <article class="feature-card">
+            <div class="feature-img-wrap">
+              <div class="img-placeholder">東国三社巡り</div>
             </div>
-            <div class="card-body">
-              <span class="course-badge">♨️ 温泉を巡る</span>
-              <h3 class="card-title">大自然の絶景とともに楽しむ源泉掛け流し秘湯旅</h3>
+            <div class="feature-body">
+              <span class="course-badge">⛩️ 神社仏閣を巡る</span>
+              <h3 class="feature-title">関東最強のパワースポット「東国三社」開運お参りルート</h3>
+              <p class="feature-desc">鹿島神宮・香取神宮・息栖神社を1日で巡る絶景と歴史のドライブコース。</p>
+            </div>
+          </article>
+
+          <!-- 特集 3 -->
+          <article class="feature-card">
+            <div class="feature-img-wrap">
+              <div class="img-placeholder">道の駅グルメ</div>
+            </div>
+            <div class="feature-body">
+              <span class="course-badge">🍜 名物を巡る</span>
+              <h3 class="feature-title">ご当地ソフトクリーム＆ドライブ飯！全国道の駅巡り</h3>
+              <p class="feature-desc">ドライバー必見！ご当地ならではの絶品テイクアウト・限定スイーツ特集。</p>
             </div>
           </article>
         </div>
@@ -230,16 +306,33 @@
     <div class="container footer-inner">
       <div class="footer-brand">
         <div class="footer-logo">TRAVID</div>
-        <p class="footer-desc">新しい旅の発見と提案をお届けするメディアプラットフォーム</p>
+        <p class="footer-desc">未知の魅力を発見する、ローカルドライブ＆旅行ガイドメディア</p>
+
+        <!-- SNSリンク -->
+        <div class="footer-sns">
+          <a href="#" aria-label="X (Twitter)">
+            <svg class="sns-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="#" aria-label="Instagram">
+            <svg class="sns-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          </a>
+        </div>
       </div>
+
       <nav class="footer-nav">
-        <ul>
-          <li><a href="#area">エリア</a></li>
+        <ul class="footer-menu">
+          <li><a href="#area">エリアから探す</a></li>
           <li><a href="#see">見る</a></li>
           <li><a href="#eat">食べる</a></li>
           <li><a href="#shop">買う</a></li>
           <li><a href="#rest">休む</a></li>
-          <li><a href="#tour">巡る</a></li>
+          <li><a href="#tour">テーマで巡る</a></li>
+        </ul>
+        <ul class="footer-sub-menu">
+          <li><a href="#">運営会社 / HEKION</a></li>
+          <li><a href="#">利用規約</a></li>
+          <li><a href="#">プライバシーポリシー</a></li>
+          <li><a href="#">お問い合わせ</a></li>
         </ul>
       </nav>
     </div>
