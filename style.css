@@ -117,19 +117,12 @@ body {
   text-decoration: none;
   display: flex;
   align-items: center;
-  gap: 8px;
 }
 
 .logo-img {
-  height: 40px;
+  height: 48px;
+  width: auto;
   display: block;
-}
-
-.logo-text-dummy {
-  color: var(--navy-deep);
-  font-size: 28px;
-  font-weight: bold;
-  letter-spacing: 2px;
 }
 
 /* 下部：ネイビー背景のナビゲーションバー */
@@ -432,10 +425,14 @@ body {
 }
 
 .footer-logo {
-  font-size: 26px;
-  font-weight: bold;
-  color: var(--gold-accent);
-  margin-bottom: 12px;
+  display: inline-block;
+  margin-bottom: 16px;
+}
+
+.footer-logo-img {
+  height: 44px;
+  width: auto;
+  display: block;
 }
 
 .footer-desc {
@@ -502,11 +499,7 @@ body {
   }
 
   .logo-img {
-    height: 32px;
-  }
-
-  .logo-text-dummy {
-    font-size: 22px;
+    height: 36px;
   }
 
   /* スマホ用ハンバーガーボタン */
@@ -607,5 +600,9 @@ body {
   .footer-nav {
     flex-direction: column;
     gap: 24px;
+  }
+
+  .footer-logo-img {
+    height: 36px;
   }
 }
