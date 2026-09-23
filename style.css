@@ -35,7 +35,7 @@ body {
 }
 
 /* ==========================================
-   共通コンポーネント（ライト基調）
+   共通コンポーネント
    ========================================== */
 .section {
   padding: 80px 0;
@@ -67,6 +67,12 @@ body {
   color: var(--gold-accent);
   letter-spacing: 2px;
   font-weight: bold;
+}
+
+.card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
 }
 
 /* 背景オーバーレイ */
@@ -122,6 +128,7 @@ body {
 .logo-img {
   height: 48px;
   width: auto;
+  max-width: 100%;
   display: block;
 }
 
@@ -191,7 +198,7 @@ body {
 }
 
 /* ==========================================
-   2. メインビジュアル (Hero - 検索窓なし)
+   2. メインビジュアル (Hero Section)
    ========================================== */
 .hero {
   position: relative;
@@ -246,7 +253,7 @@ body {
 }
 
 /* ==========================================
-   3. エリアから探す (日本地図 8区分 - ライト基調)
+   3. エリアから探す (日本地図 8区分)
    ========================================== */
 .japan-map-wrapper {
   max-width: 800px;
@@ -429,10 +436,15 @@ body {
   margin-bottom: 16px;
 }
 
+/* 紺背景での視認性向上（白色へ反転 ＋ 明瞭化） */
 .footer-logo-img {
-  height: 44px;
+  height: 40px;
   width: auto;
+  max-width: 100%;
   display: block;
+  filter: brightness(0) invert(1); /* 黒・濃色文字のロゴ画像を完全ホワイトに反転 */
+  /* 元画像がすでにカラーの場合は以下のようにドロップシャドウや白フチを立てることも可能： */
+  /* filter: drop-shadow(0px 0px 3px rgba(255, 255, 255, 0.8)); */
 }
 
 .footer-desc {
@@ -491,18 +503,21 @@ body {
 }
 
 /* ==========================================
-   レスポンシブ設定（スマホ表示）
+   レスポンシブ設定（スマホ表示 768px以下）
    ========================================== */
 @media screen and (max-width: 768px) {
+  /* スマホヘッダー：ロゴを中央に配置し、ハンバーガーボタンを右端へ固定 */
   .logo-banner-inner {
-    justify-content: space-between;
+    justify-content: center;
+    position: relative;
   }
 
   .logo-img {
     height: 36px;
+    max-width: 200px;
   }
 
-  /* スマホ用ハンバーガーボタン */
+  /* スマホ用ハンバーガーボタン（右端に絶対配置） */
   .hamburger {
     display: flex;
     flex-direction: column;
@@ -512,6 +527,10 @@ body {
     background: transparent;
     border: none;
     cursor: pointer;
+    position: absolute;
+    right: 24px;
+    top: 50%;
+    transform: translateY(-50%);
   }
 
   .hamburger span {
@@ -568,7 +587,7 @@ body {
     gap: 20px;
   }
 
-  /* メインビジュアル（スマホ高さ調整） */
+  /* メインビジュアル */
   .hero {
     height: 360px;
   }
@@ -581,7 +600,7 @@ body {
     font-size: 14px;
   }
 
-  /* 日本地図グリッド（スマホは2列） */
+  /* 日本地図グリッド（スマホ2列） */
   .japan-map-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 12px;
@@ -592,6 +611,7 @@ body {
     font-size: 15px;
   }
 
+  /* フッターレイアウト＆ロゴサイズ（スマホ用） */
   .footer-inner {
     flex-direction: column;
     gap: 32px;
@@ -603,6 +623,7 @@ body {
   }
 
   .footer-logo-img {
-    height: 36px;
+    height: 32px;
+    max-width: 180px; /* 画面からはみ出さないよう上限指定 */
   }
 }
